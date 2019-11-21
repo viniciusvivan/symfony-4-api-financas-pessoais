@@ -1,0 +1,76 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+controllers:
+  resource: '../src/Controller'
+  type: annotation
+  prefix: /api
+
+category_all:
+  path: /categories
+  controller: App\Controller\CategoryController::findAll
+  methods:
+    - GET
+
+category_one:
+  path: /categories/{id}
+  controller: App\Controller\CategoryController::findOne
+  methods:
+    - GET
+
+category_create:
+  path: /categories
+  controller: App\Controller\CategoryController::insert
+  methods:
+    - POST
+
+category_update:
+  path: /categories/{id}
+  controller: App\Controller\CategoryController::update
+  methods:
+    - PUT
+    - PATCH
+
+category_delete:
+  path: /categories/{id}
+  controller: App\Controller\CategoryController::delete
+  methods:
+    - DELETE
+
+transaction_all:
+  path: /transactions
+  controller: App\Controller\TransactionController::findAll
+  methods:
+    - GET
+
+transaction_one:
+  path: /transactions/{id}
+  controller: App\Controller\TransactionController::findOne
+  methods:
+    - GET
+
+transaction_create:
+  path: /transactions
+  controller: App\Controller\TransactionController::insert
+  methods:
+    - POST
+
+transaction_update:
+  path: /transactions/{id}
+  controller: App\Controller\TransactionController::update
+  methods:
+    - PUT
+    - PATCH
+
+transaction_delete:
+  path: /transactions/{id}
+  controller: App\Controller\TransactionController::delete
+  methods:
+    - DELETE
+
+transaction_find_by_month:
+  path: /transactions_month/
+  controller: App\Controller\TransactionController::findByMonth
+  methods:
+    - GET
